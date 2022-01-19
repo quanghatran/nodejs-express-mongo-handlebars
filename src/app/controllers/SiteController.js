@@ -1,7 +1,7 @@
 const { multipleMongooseToObject } = require("../../util/mongoose");
 const Course = require("../models/Course");
 class SiteController {
-	// [GET] /news
+	// [GET] / home
 	index(req, res, next) {
 		Course.find({})
 			.then((courses) => {
@@ -10,7 +10,7 @@ class SiteController {
 			.catch(next);
 	}
 
-	// [GET] /news/:slug
+	// [GET] / search
 	search(req, res) {
 		res.render("search");
 	}
