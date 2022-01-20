@@ -1,0 +1,23 @@
+<div class="mt-4">
+	<h3>Thêm khóa học</h3>
+	<form method="POST" action="/course/store">
+		<div class="form-group">
+			<label for="name">Tên mới khóa học</label>
+			<input type="text" class="form-control" id="name" name="name" />
+			<label for="description">Mô tả khóa học</label>
+			<input
+				type="text"
+				class="form-control"
+				id="description"
+				name="description"
+			/>
+			<label for="videoId">Id video youtube</label>
+			<input type="text" class="form-control" id="videoId" name="videoId" />
+			<label for="level">Độ khó</label>
+			<input type="text" class="form-control" id="level" name="level" />
+
+		</div>
+
+		<button type="submit" class="btn btn-primary">Thêm mới</button>
+	</form>
+</div>
