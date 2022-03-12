@@ -11,6 +11,7 @@ const Course = new Schema(
 		slug: { type: String },
 		image: { type: String, require: true },
 		videoId: { type: String, require: true },
+		level: { type: String, require: true },
 		slug: { type: String, slug: "name", unique: true },
 	},
 	{

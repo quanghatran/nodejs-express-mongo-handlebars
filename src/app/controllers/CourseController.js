@@ -25,8 +25,12 @@ class CourseController {
 			.save()
 			.then(() => res.redirect("/"))
 			.catch((err) => console.log("ERROR: ", err));
+	}
 
-		// res.send("course saved!!!");
+	// [GET] /course/:id/edit
+	edit(req, res, next) {
+		console.log("ID: ", req.params.id);
+		res.render("courses/edit");
 	}
 }
 
