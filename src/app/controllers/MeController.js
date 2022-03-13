@@ -1,7 +1,7 @@
 const { multipleMongooseToObject } = require("../../util/mongoose");
 const Course = require("../models/Course");
 class MeController {
-	// [GET] / me/stored/courses
+	// [GET] /me/stored/courses
 	storedCourses(req, res, next) {
 		Course.find({})
 			.then((courses) =>

@@ -19,13 +19,62 @@
 					<td>{{this.createdAt}}</td>
 					<td>
 						<a
-							href="/courses/{{this._id}}/edit"
+							href="/course/{{this._id}}/edit"
 							class="btn btn-success mr-2"
 						>Edit</a>
-						<a href="" class="btn btn-danger">Delete</a>
+						<a
+							href=""
+							class="btn btn-danger"
+							data-toggle="modal"
+							data-id="{{this._id}}"
+							data-target="#deleteCourseModal"
+						>Delete</a>
 					</td>
 				</tr>
 			{{/each}}
 		</tbody>
 	</table>
 </div>
+
+{{! confirm delete course }}
+<div id="deleteCourseModal" class="modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Delete course!</h5>
+				<button
+					type="button"
+					class="close"
+					data-dismiss="modal"
+					aria-label="Close"
+				>
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p>Are you sure to delete the course???</p>
+			</div>
+			<div class="modal-footer">
+				<button
+					id="btn-delete-course"
+					type="button"
+					class="btn btn-danger"
+				>Confirm</button>
+				<button
+					type="button"
+					class="btn btn-secondary"
+					data-dismiss="modal"
+				>Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function() { var courseId;
+	$('#deleteCourseModal').on('show.bs.modal', function (event) { var button =
+	$(event.relatedTarget); courseId = button.data('id'); }) var btnDeleteCourse =
+	document.getElementById('btn-delete-course');
+	btnDeleteCourse.addEventListener("click", function() { console.log(courseId);
+	}) });
+</script>
